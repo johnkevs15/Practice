@@ -1,4 +1,4 @@
-package midterm;
+
 
 class Motorcycle{
     String brand;
@@ -31,10 +31,11 @@ class Motorcycle{
     }
     @Override
     public String toString(){
-        String orders = "You order are "+ "\n" +
-                         "BrandName: " + this.getBrand() +"\n" +
-                         "Color: " + this.getColor() + "\n" +
-                         "Model: " + this.getModel();
+
+        String orders = "*  You order are "+ "\n" +
+                         "* BrandName: " + this.getBrand() +"\n" +
+                         "* Color: " + this.getColor() + "\n" +
+                         "* Model: " + this.getModel();
         return orders;
     }
 }

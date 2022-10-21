@@ -1,4 +1,4 @@
-package midterm;
+
 
 import java.util.Scanner;
 
@@ -8,6 +8,8 @@ public class Midterm {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         while (true) {
+           
+            int integer = Integer.MAX_VALUE;
             System.out.println("""
                     *****************************************
                     *      Welcome to MotorCycle Dealer     *
@@ -16,10 +18,15 @@ public class Midterm {
                     *               2 for NO                *
                     *****************************************
                             """);
+                           
             System.out.print("Enter your choice: ");
-            int response = s.nextInt();
+           
+            String response = s.nextLine();
+            
+            try {
+                integer = Integer.parseInt(response);
 
-            if (response == 1) {
+            if (integer == 1) {
                 System.out.print("Please Enter you name: ");
                 String name = s.next();
 
@@ -46,27 +53,30 @@ public class Midterm {
                     }
 
                     System.out.println("""
-                            Would you like to add your orders?
-                                        1 for Yes
-                                        2 for No
-                            """);
+                            =========================================
+                            =    Would you like to add your orders? =
+                            =                1 for Yes              =
+                            =                2 for No               =
+                            =========================================
+                                """);
                     System.out.println("Enter you choice: ");
                     int choice = s.nextInt();
+                   
                     if (choice == 1) {
                         while (true) {
                             System.out.println("""
-                            ======================================    
-                            =        Optoins                     =
-                            =        A. Add orders               =
-                            =        B. Remove your order        =
-                            =        C. Display all your orders  =
-                            =        X. Exit                     =
-                            ======================================        
-                                    """);
+                                    ======================================
+                                    =        Optoins                     =
+                                    =        A. Add orders               =
+                                    =        B. Remove your order        =
+                                    =        C. Display all your orders  =
+                                    =        X. Exit                     =
+                                    ======================================
+                                            """);
                             System.out.println("Your Options: ");
                             String options = s.next();
                             switch (options) {
-                                case "A":
+                                case "A", "a":
                                     System.out.println("Brand Name: ");
                                     String brand = s.next();
                                     System.out.println("Color: ");
@@ -77,22 +87,22 @@ public class Midterm {
                                     order.add(motor);
                                     System.out.println("Successfully Added to your orders ");
                                     break;
-                                case "B":
-                                System.out.println("Enter the index that you want to remove: ");
-                                int index = s.nextInt();
-                                order.remove(index);
-                                System.out.println("Successfully Remove from your orders ");
-                                for (Motorcycle element : order) {
-                                    System.out.println(element);
-                                }
+                                case "B", "b":
+                                    System.out.println("Enter the index that you want to remove: ");
+                                    int index = s.nextInt();
+                                    order.remove(index);
+                                    System.out.println("Successfully Remove from your orders ");
+                                    for (Motorcycle element : order) {
+                                        System.out.println(element);
+                                    }
                                     break;
-                                case "C":
+                                case "C","c":
                                     for (Motorcycle element : order) {
                                         System.out.println(element);
                                     }
 
                                     break;
-                                case "X":
+                                case "X","x":
                                     System.exit(0);
                             }
                         }
@@ -100,11 +110,17 @@ public class Midterm {
 
                 }
             }
-            if (response == 2) {
+            if (integer == 2) {
                 System.exit(0);
             }
 
             s.close();
         }
+     catch (NumberFormatException e) {
+        System.out.println("Error! Invalid integer. Try again.");
+        continue;
+    }
+
+    }
     }
 }
