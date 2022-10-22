@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Midterm {
     public static void main(String[] args) {
       
-        Motorcycle motor = new Motorcycle(null, null, null);
+        Motorcycle motor = new Motorcycle(" ", " ", " ");
         
         try (Scanner s = new Scanner(System.in)) {
             while (true) {
@@ -62,9 +62,9 @@ public class Midterm {
                           
                             System.out.println("Model "+(i+1)+": ");
                            String m = s.next() ;
-                           Motorcycle motor1 = new Motorcycle(b,c,m);
-                            order.add(motor1);
-                            System.out.println("Number of orders " + orders + "\n" + motor1);
+                            motor = new Motorcycle(b,c,m);
+                            order.add(motor);
+                            System.out.println("Number of orders " + orders + "\n" + motor);
                         }
 
                         System.out.println("""
@@ -100,8 +100,8 @@ public class Midterm {
                           
                             System.out.println("Model: ");
                            String m = s.next() ;
-                           Motorcycle motor1 = new Motorcycle(b,c,m);
-                            order.add(motor1);
+                            motor = new Motorcycle(b,c,m);
+                            order.add(motor);
                                         System.out.println("Successfully Added to your orders ");
                                         motor = new Motorcycle(b, c, m);
                                         break;
@@ -129,7 +129,11 @@ public class Midterm {
                                          """);
                                          System.out.println("Your Choice: ");
                                         int anscolor = s.nextInt();
-                                        
+                                        try {
+                                            
+                                        } catch (Exception e) {
+                                            // TODO: handle exception
+                                        }
                                         if(anscolor != 1){
                                                break;
                                         } else{
