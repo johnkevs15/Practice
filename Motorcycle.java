@@ -1,5 +1,4 @@
 
-
 public class Motorcycle{
    public  String brand;
     public String model;
@@ -29,7 +28,7 @@ public class Motorcycle{
     @Override
     public String toString(){
 
-        String orders = "*  You order are "+ "\n" +
+        String orders = "  You order are "+ "\n" +
                          "* BrandName: " + this.getBrand() +"\n" +
                          "* Color: " + this.getColor() + "\n" +
                          "* Model: " + this.getModel();

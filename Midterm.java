@@ -1,11 +1,8 @@
 
-
 import java.util.Scanner;
-
 import java.util.ArrayList;
-
 public class Midterm {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
       
         Motorcycle motor = new Motorcycle(" ", " ", " ");
         
@@ -49,10 +46,15 @@ public class Midterm {
                     System.out.println("    Welcome");
                     System.out.println("    Mr." + name);
                     System.out.println("    Shop:" + shop);
+                    Thread.sleep(4000);
                     while (true) {
                         ArrayList<Motorcycle> order = new ArrayList<Motorcycle>();
                         System.out.print("How many Motor would like to order? ");
+                        try {
+                            
+                        
                         int orders = s.nextInt();
+
                         for (int i = 0; i < orders; i++) {
                             System.out.println("Brand Name "+(i+1)+": ");
                             String b =s.next(); 
@@ -66,7 +68,7 @@ public class Midterm {
                             order.add(motor);
                             System.out.println("Number of orders " + orders + "\n" + motor);
                         }
-
+                        Thread.sleep(4000);
                         System.out.println("""
                                 =========================================
                                 =    Would you like to Edit your orders? =
@@ -75,8 +77,10 @@ public class Midterm {
                                 =========================================
                                     """);
                         System.out.println("Enter you choice: ");
+                        
+                       try {
                         int choice = s.nextInt();
-                       
+                      
                         if (choice == 1) {
                             while (true) {
                                 System.out.println("""
@@ -103,13 +107,19 @@ public class Midterm {
                             motor = new Motorcycle(b,c,m);
                             order.add(motor);
                                         System.out.println("Successfully Added to your orders ");
-                                        motor = new Motorcycle(b, c, m);
+                                       
                                         break;
                                      case "B", "b":
                                         System.out.println("Enter the index that you want to remove: ");
-                                        int index = s.nextInt();
-                                        order.remove(index);
-                                        System.out.println("Successfully Remove from your orders ");
+                                       
+                                        try{
+                                            int index = s.nextInt();
+                                            order.remove(index);
+                                            System.out.println("Successfully Remove from your orders ");
+                                        }catch(Exception  e){
+                                            System.out.println(e.getMessage());
+                                        }
+                                      
                                         for (Motorcycle element : order) {
                                             System.out.println(element);
                                         }
@@ -130,9 +140,15 @@ public class Midterm {
                                          System.out.println("Your Choice: ");
                                         int anscolor = s.nextInt();
                                         try {
-                                            
-                                        } catch (Exception e) {
-                                            // TODO: handle exception
+                                            if(anscolor < 0){
+                                                throw new MotorException("Input only Positive Number");
+                                            }
+                                            if(anscolor > 2){
+                                                throw new MotorException("Two Options only");
+
+                                            }
+                                        } catch (MotorException e) {
+                                            System.out.println(e.getMessage());
                                         }
                                         if(anscolor != 1){
                                                break;
@@ -148,11 +164,12 @@ public class Midterm {
      
                                                 order.set(i, motor);
                                         }
+
                                         for (Motorcycle element : order) {
                                             System.out.println(element);
                                             
                                         }
-                                        
+                                        Thread.sleep(5000);
                                     
                                         break;
                                     case "X","x":
@@ -163,6 +180,12 @@ public class Midterm {
                                 }
                             }
                         }
+                     } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                       }
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                      }
 
                     }
                 }
