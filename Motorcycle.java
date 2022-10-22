@@ -1,16 +1,11 @@
 
 
-class Motorcycle{
-    String brand;
-    String model;
-    String color;
+public class Motorcycle{
+   public  String brand;
+    public String model;
+    public String color;
 
-    public Motorcycle(String brand, String color, String model){
-        this.brand = brand;
-        this.color = color;
-        this.model =  model;
-       
-    }
+    
     public String getBrand() {
         return brand;
     }
@@ -20,14 +15,16 @@ class Motorcycle{
     public String getModel() {
         return model;
     }
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public String setBrand(String brand) {
+        return this.brand = brand;
     }
-    public void setColor(String color) {
-        this.color = color;
+    public String setColor(String color) {
+      this.color = color;
+        return color;
+        
     }
-    public void setModel(String model) {
-        this.model = model;
+    public String setModel(String model) {
+       return this.model = model;
     }
     @Override
     public String toString(){
@@ -37,5 +34,11 @@ class Motorcycle{
                          "* Color: " + this.getColor() + "\n" +
                          "* Model: " + this.getModel();
         return orders;
+    }
+    public Motorcycle(String brand, String color, String model){
+        this.brand = brand;
+        this.color = color;
+        this.model =  model;
+     
     }
 }
