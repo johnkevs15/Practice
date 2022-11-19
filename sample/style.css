@@ -91,7 +91,7 @@ img {
 form .form{
     position: absolute;
 }
-.second, .first{
+.third, .first, .second{
     display: none;
 }
 
@@ -120,7 +120,8 @@ ul{
     text-decoration: none;
 }
 .professional{
-    background-color: rgba(166, 26, 108, 0.313);
+    margin-top: 2%;
+    /* background-color: rgba(166, 26, 108, 0.313); */
     width: 400px;
     height: 400px;
    

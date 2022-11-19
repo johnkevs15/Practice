@@ -13,7 +13,7 @@
     <body>
     <nav>
         <div class="header">
-            <img src="DCSM.png">
+            <img src="./images/DCSM.png">
             <span>DCSM Resume Builder</span>
         </div>
 
@@ -136,7 +136,7 @@
                     
                     
                     </div>
-                    <div id="addEducation""></div>
+                    <div id="addEducation"></div>
                     <div class="mb-3">
                         <button type="button" id="education_hide" class="btn btn-primary form-control" onclick="addEducation()"  style="padding: 5px; font-size:20px; width: 100px; ">+</button>
                     </div>
@@ -168,9 +168,9 @@
                             <label for="exampleInputEmail1" class="form-label">Your Skills</label>
                             <input type="text" class="input" name="skill1" style="height: 30px; margin-bottom: 5px;" required>
                             <select id="select" name="skill_level1" style="height: 30px;" required>
-                                <option value="">Select stars based upon your skill level</option>
+                                <option value=""  selected="selected">Select stars based upon your skill level</option>
                                 <option  class="input"value="1">1 - Novice</option>
-                                <option  class="input"value="2" selected="selected">2 - Advanced Beginner</option>
+                                <option  class="input"value="2">2 - Advanced Beginner</option>
                                 <option  class="input" value="3">3 - Competent</option>
                                 <option  class="input" value="4">4 - Proficient</option>
                                 <option  class="input" value="5">5 - Expert</option>
@@ -182,7 +182,7 @@
                         <button type="button" id="skill_hide" class="btn1" onclick="addSkill()" style="margin-left:10px">+</button>
                         <div class="mb-3" style="text-align: center;">
                            
-                            <button class="btn1" id="skilladd">Add</button>
+                            <!-- <button class="btn1" id="skilladd">Add</button> -->
                         </div>
                         
                     </div>
@@ -190,10 +190,12 @@
                 </div>
                 <div class="display1">
                     <center>
+                        <span class="title">Hard and soft Skills Sample</span>
                         <div class="professional">
-                            <ul>
-                                
-                            </ul>
+                            <img src="./images/resized.png"  alt="" height="100%"  width=100% style="height: 100px;
+                           height: 88%;
+                            object-fit: cover;
+                            object-position: top;">
                          </div>
                     </center>
                     
@@ -216,6 +218,61 @@
                 </button>
             </div> 
        </div>
+       <div class="form fourth">
+        <div class="Work History" style="padding: 25px; margin-top: 28px;">
+            <span class="title">Work History</span>
+            <div class="field" style="grid-gap:11% ;margin-top:30px;"   >
+                <div class="input-field">
+                    <input type="text" placeholder="POSITION" style="width: 570px; height: 50px;">
+                    <label >POSITION</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="  COMPANY NAME" style="width: 570px; height: 50px;"> 
+                    <label >COMPANY NAME</label>
+                </div>  
+            
+            
+            </div>
+            <div class="field-1">
+                <div class="input-field-1">
+                    <input type="text" placeholder="COMPANY LOCATION" style="width: 1285px; height: 50px;">
+                    <label >COMPANY LOCATION</label>
+                </div>
+                <div class="input-field-1">
+                    <input type="text" placeholder="ADDRESS" style="width: 1285px; height: 50px;">
+                    <label >ADDRESS</label>
+                </div>  
+            
+            </div>
+            <div class="field" style="grid-gap:11%; ">
+                <div class="input-field">
+                    <input type="date" placeholder="START DATE" style="width: 570px; height: 50px;">
+                    <label >START DATE</label>
+                </div>
+                <div class="input-field">
+                    <input type="date" placeholder="END DATE" style="width: 570px; height: 50px;">
+                    <label >END DATE</label>
+                </div>  
+            
+            
+            </div>
+            <div class="buttons">
+                <button class="backbtn2" style="margin-left: 35px; margin-top: 146px;">
+                
+                <i class='fa fa-angle-left' style="font-size: 30px;"></i>
+                <span class="btntext"  style="text-transform: uppercase; font-size: 30px;  "> back
+                
+                </span>
+                <button class="nextbtn2" style="margin-left: 1010px; margin-top: 110px;">
+                
+                    <span class="btntext"  style="text-transform: uppercase; font-size: 30px; background-color: rgb(196, 5, 5); ">next
+                        <i class='fa fa-angle-right'></i>
+                    </span>
+                </button>
+            </div> 
+           
+        </div>
+   </div>
             </form>
             <script src="style.js">
             
