@@ -7,7 +7,11 @@ body{
     /* background-color: aquamarine; */
     height: 100%;
     margin: 0;
+    width: 100%;
+    overflow: hidden;
 }
+/* for narbar  */
+
 .header {
     width: 100%;
     height: 100px;
@@ -16,18 +20,20 @@ body{
     position: center;
     top: 0px;
     left: 45px;
-    /* margin-top: -28px; */
-    overflow: hidden;
+    margin-top: -25px;
+    padding: 5px;   
   }
   .header img{
     height: 100%;
     width: 10%;
-    object-fit: cover;
+    margin-left: 5px;
+    margin-top: 5px;
+    
   }
   .header span{
     color: rgb(239, 174, 23);
     position:absolute;
-    top: 34px;
+    top: 15px;
     left: 140px;
     font-family: Inter;
     font-weight: Semi Bold;
@@ -35,6 +41,7 @@ body{
     padding-left: 8px;
   }
 form{
+    
 
     /* background-color: red; */
     /* border: 1px solid; */
@@ -44,6 +51,9 @@ form{
     left: 2.5%;
     margin-top: -2%;
     position: relative;
+    align-items: center;
+    
+    
 }
 span{
     font-size:40px;
@@ -91,8 +101,20 @@ img {
 form .form{
     position: absolute;
 }
-.third, .first, .second{
+.third,  .second, .fourth, .first{
     display: none;
+    transform-origin: left;
+    animation: animate .5s;
+}
+@keyframes animate {
+    form{
+        transform: scale(1,0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1,1);
+        opacity: 1;
+    }
 }
 
 .field-1 .input-field-1{
@@ -126,6 +148,7 @@ ul{
     height: 400px;
    
 }
+
 .btn1{
     background-color: grey;
     width: 50px;
@@ -134,3 +157,64 @@ ul{
 .btn1:hover{
     background-color: red;
 }
+/* FOR TEXT EDITOR */
+.Summary{
+    /* background-color: red; */
+    
+     width: 100%;
+     height: 100%;
+}
+a {
+	cursor: pointer;
+}
+.container {
+
+	background: #f3f3f3;
+	border-radius: 8px;
+	/* overflow: hidden; */
+    height: 100%;
+    width: 100%;
+}
+.toolbar {
+	padding: 20px;
+	background: #eee;
+  
+    
+}
+.toolbar .btn-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+    justify-content: center;
+	grid-gap: 10px;
+
+}
+.toolbar .btn-toolbar button {
+	background: #fff;
+	border: 2px solid #ddd;
+	border-radius: 6px;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+.toolbar .btn-toolbar button:hover {
+	background: #f3f3f3;
+}
+#content {
+	padding: 16px;
+	outline: none;
+	height: 70%;
+    border-radius: 10px;
+    background-color: #ffff;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: 30px;
+    
+}
+
+
+

@@ -54,6 +54,36 @@ $(document).ready(function(){
        $(".third").hide(); 
      $(".fourth").show();
    });
+   $(".backbtn2").click(function(){
+    // var schoolVal = $("#school").val();
+    // var schoollocationVal = $("#schooll").val();
+    // var degreeVal = $("#deg").val();
+    // var fieldVal = $("#field").val();
+    // var startVal = $("#start").val();
+    // var endVal = $("#end").val();
+    // if(schoolVal.length!=0 && schoollocationVal!=0 && degreeVal!=0 && fieldVal!=0 && startVal!=0 && endVal!=0){ 
+     $(".third").hide();
+     $(".second").show();
+    // }
+   });
+   $(".nextbtn3").click(function(){
+//     $(".second").hide(); 
+//     $(".first").hide(); 
+//     $(".third").hide(); 
+//   $(".fourth").show();
+});
+$(".backbtn3").click(function(){
+ // var schoolVal = $("#school").val();
+ // var schoollocationVal = $("#schooll").val();
+ // var degreeVal = $("#deg").val();
+ // var fieldVal = $("#field").val();
+ // var startVal = $("#start").val();
+ // var endVal = $("#end").val();
+ // if(schoolVal.length!=0 && schoollocationVal!=0 && degreeVal!=0 && fieldVal!=0 && startVal!=0 && endVal!=0){ 
+  $(".fourth").hide();
+  $(".third").show();
+ // }
+});
 });
 
 // for add education
@@ -68,11 +98,11 @@ function addEducation(){
       var field = 
       `  <div class="field" style="grid-gap:11% ;margin-top:30px;">
       <div class="input-field">
-          <input type="text" placeholder="School name" style="width: 570px; height: 50px;" required id="school">
+          <input type="text" placeholder="School name" style="width: 560px; height: 50px;" required id="school">
           <label >School name</label>
       </div>
       <div class="input-field">
-          <input type="text" placeholder="school location" style="width: 570px; height: 50px;" id="schooll" required>
+          <input type="text" placeholder="school location" style="width:560px; height: 50px;" id="schooll" required>
           <label >school location</label>
       </div>  
   
@@ -80,21 +110,21 @@ function addEducation(){
   </div>
   <div class="field-1">
                     <div class="input-field-1">
-                        <input type="text" placeholder="degree" style="width: 1285px; height: 50px;" id="deg" required>
+                        <input type="text" placeholder="degree" style="width: 1259px; height: 50px;" id="deg" required>
                         <label >degree</label>
                     </div>
                     <div class="input-field-1">
-                        <input type="text" placeholder="field of study" style="width: 1285px; height: 50px;" id="field" required>
+                        <input type="text" placeholder="field of study" style="width: 1259px; height: 50px;" id="field" required>
                         <label >field of study</label>
                     </div>      
                 </div>
                 <div class="field"style="grid-gap:11%">
                     <div class="input-field">
-                        <input type="date" placeholder="school start" style="width: 570px; height: 50px;" id="start" required>
+                        <input type="date" placeholder="school start" style="width: 560px; height: 50px;" id="start" required>
                         <label >school start</label>
                     </div>
                     <div class="input-field">
-                        <input type="date" placeholder="school end" style="width: 570px; height: 50px;" id="end" required>
+                        <input type="date" placeholder="school end" style="width: 560px; height: 50px;" id="end" required>
                         <label >school end</label>
                     </div>  
                 
@@ -155,4 +185,20 @@ function addSkill(){
 
 // });
 
+function formatDoc(cmd, value=null) {
+	if(value) {
+		document.execCommand(cmd, false, value);
+	} else {
+		document.execCommand(cmd);
+	}
+}
 
+
+
+
+
+
+
+
+
+	
