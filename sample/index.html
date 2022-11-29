@@ -10,8 +10,10 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       
         </head>
-        <body>
+        <body> 
         <nav>
             <div class="header">
                 <img src="./images/DCSM.png">
@@ -22,18 +24,18 @@
                 <form action="#">
             
                 
-                <div class="form first active" style="margin-top: 23px; padding: 30px;">
+                <div class="form first" style="margin-top: 23px; padding: 30px;">
                     <span >  Personal Information</span>
                     <div class="box" >
                         <div class="picture" >
                             <label for="addimage"><i class="fa fa-plus" style="border: 1px solid; padding:50px; cursor: pointer; font-size: 50px; margin-top: 50px;"></i></label> 
                             <!-- <input type="file" name="" id="addimage" style="display: none; visibility:none;" onchange="imagePreview(this)" onchange="getImage(this.value)"> -->
                             
-                            <input type="file" name="" id="addimage" style="display: none; visibility:none;" onchange="imagePreview(this)" >
+                            <input type="file" name="" id="addimage" style="display: none; visibility:none;" onchange="imagePreview(this)" required >
                             <br>
                             <br>
                             <label for="addimage"><i class="fa fa-download" style="border: 1px solid; padding: 10px; background-color: white; " class="download" > Choose A Image</i></label>
-                            <input type="file" name="" id="addimage" style="display: none; visibility:none;" onchange="imagePreview(this)" >
+                            <input type="file" name="" id="addimage" style="display: none; visibility:none;" onchange="imagePreview(this)"  required >
                             <br>
                             <img src="" id="out-put" width="300px"  style="position: absolute; margin-top: -240px; margin-left: -125px;"> 
                         
@@ -51,7 +53,8 @@
                         <div class="userInput" >
                             <div class="field" style=" grid-gap: 37%;">
                                 <div class="input-field" >
-                                    <input type="text" placeholder="First Name" style="width: 260%; height: 50px;" id="fname" required>
+                                    <input type="text" placeholder="First Name" style="width: 260%; height: 50px;" id="fname" required >
+                                  
                                     <label class="input-level" >First Name</label>
                                 </div>
                                 <div class="input-field">
@@ -63,7 +66,7 @@
                             </div>
                             <div class="field-1">
                                 <div class="input-field-1">
-                                    <input type="text" placeholder="JOB TITLE" style="width: 965px; height: 50px;" id="job"required>
+                                    <input type="text" placeholder="JOB TITLE" style="width: 965px; height: 50px;" id="job" required>
                                     <label class="input-level" >JOB TITLE</label>
                                 </div>
                                 <div class="input-field-1">
@@ -74,11 +77,12 @@
                             </div>
                             <div class="field" style=" grid-gap: 37%;">
                                 <div class="input-field">
-                                    <input type="text" placeholder="Contact" style="width: 260%; height: 50px;" id="contact" required>
+                                    <input type="tel" placeholder="Contact" style="width: 260%; height: 50px;" id="contact" required>
+                               
                                     <label  class="input-level">Contact </i></label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="text" placeholder="Email" style="width: 260%; height: 50px;" id="email" required>
+                                    <input type="email" placeholder="Email" style="width: 260%; height: 50px;" id="email" required>
                                     <label class="input-level" >Email</label>
                                 </div>  
                             
@@ -104,11 +108,11 @@
                         <span class="title">Education Background</span>
                         <div class="field" style="grid-gap:11% ;margin-top:30px;">
                             <div class="input-field">
-                                <input type="text" placeholder="School name" style="width: 560px; height: 50px;" required id="school">
+                                <input type="text" placeholder="School name" style="width: 560px; height: 50px;" id="school" required>
                                 <label >School name</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" placeholder="school location" style="width: 560px; height: 50px;" id="schooll" required>
+                                <input type="text" placeholder="school location" style="width: 560px; height: 50px;" id="schooll"required >
                                 <label >school location</label>
                             </div>  
                         
@@ -166,8 +170,8 @@
                             <h2>Skills (Max:4)</h2>
                             <div class="mb-3" style="display: grid; padding:10px;">
                                 <label for="exampleInputEmail1" class="form-label">Your Skills</label>
-                                <input type="text" class="input" name="skill1" style="height: 30px; margin-bottom: 5px;" required>
-                                <select id="select" name="skill_level1" style="height: 30px;" required>
+                                <input type="text" class="input" name="skill1" style="height: 30px; margin-bottom: 5px;" id="skills" required>
+                                <select id="select" name="skill_level1" style="height: 30px;" required >
                                     <option value=""  selected="selected">Select stars based upon your skill level</option>
                                     <option  class="input"value="1">1 - Novice</option>
                                     <option  class="input"value="2">2 - Advanced Beginner</option>
@@ -223,11 +227,11 @@
                 <span class="title">Work History</span>
                 <div class="field" style="grid-gap:11% ;margin-top:30px;"   >
                     <div class="input-field">
-                        <input type="text" placeholder="POSITION" style="width: 560px; height: 50px;">
+                        <input type="text" placeholder="POSITION" style="width: 560px; height: 50px;" id="position" required >
                         <label >POSITION</label>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="  COMPANY NAME" style="width: 560px; height: 50px;"> 
+                        <input type="text" placeholder="  COMPANY NAME" style="width: 560px; height: 50px;"   required> 
                         <label >COMPANY NAME</label>
                     </div>  
                 
@@ -235,22 +239,22 @@
                 </div>
                 <div class="field-1">
                     <div class="input-field-1">
-                        <input type="text" placeholder="COMPANY LOCATION" style="width: 1260px; height: 50px;">
+                        <input type="text" placeholder="COMPANY LOCATION" style="width: 1260px; height: 50px;"  required>
                         <label >COMPANY LOCATION</label>
                     </div>
                     <div class="input-field-1">
-                        <input type="text" placeholder="ADDRESS" style="width: 1260px; height: 50px;">
+                        <input type="text" placeholder="ADDRESS" style="width: 1260px; height: 50px;"  required>
                         <label >ADDRESS</label>
                     </div>  
                 
                 </div>
                 <div class="field" style="grid-gap:11%; ">
                     <div class="input-field">
-                        <input type="date" placeholder="START DATE" style="width: 560px; height: 50px;">
+                        <input type="date" placeholder="START DATE" style="width: 560px; height: 50px;" id="st" required>
                         <label >START DATE</label>
                     </div>
                     <div class="input-field">
-                        <input type="date" placeholder="END DATE" style="width: 560px; height: 50px;">
+                        <input type="date" placeholder="END DATE" style="width: 560px; height: 50px;" id="ed" required>
                         <label >END DATE</label>
                     </div>  
                 
@@ -273,7 +277,7 @@
             
             </div>
     </div>
-    <div class="form fifth" style=" margin-top:42px; width: 100%; padding: 10px; height: 419px;">
+    <div class="form fifth" style=" margin-top:42px; width: 100%; padding: 10px; height: 419px;" >
         <span class="title">Professional Summary</span> 
         <div class="Summary" >
             <div class="container">
@@ -287,7 +291,7 @@
                         <button onclick="formatDoc('justifyRight')"><i class='bx bx-align-right' ></i></button>
                     </div>
                 </div>
-                <div id="content" contenteditable="true" spellcheck="false">
+                <div id="content" contenteditable="true" spellcheck="true" required>
                     
                 </div>
             </div>
@@ -315,7 +319,6 @@
                 
                 </script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="script.js"></script>
+        
         </body>
         </html>

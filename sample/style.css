@@ -101,21 +101,19 @@ img {
 form .form{
     position: absolute;
 }
-.third,  .second, .fourth, .first{
+.third,  .second, .fourth, .fifth{
     display: none;
-    transform-origin: left;
-    animation: animate .5s;
+   
+   
+ 
 }
-@keyframes animate {
-    form{
-        transform: scale(1,0);
-        opacity: 0;
-    }
-    to{
-        transform: scale(1,1);
-        opacity: 1;
-    }
-}
+.emsg {
+    color: red;
+  }
+  
+  .hidden {
+   display: none;
+  }
 
 .field-1 .input-field-1{
     display: flex;

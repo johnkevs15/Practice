@@ -1,0 +1,188 @@
+@page{
+    size:A4;
+    margin: 0;
+}
+*{
+box-sizing: border-box;
+margin: 0px;
+padding: 0px;
+list-style: none;
+}
+body{
+    background-color: antiquewhite;
+    
+  
+}
+.container{
+    
+    margin: 10px auto;
+  display: grid;
+ grid-template-columns: 30% 70%;
+  
+  /* overflow: hidden; */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+ 
+  width: 80%;
+  min-height: 100vh;
+  
+}
+
+.info{
+    background-color: blue;
+    height: 100%;
+}
+.info-content{
+    padding: 10px;
+}
+.profile{
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.images{
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+}
+.name{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 10px;
+}
+.position{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding: 10px;
+}
+
+.title{
+    font-size: 20px;
+    color: black;
+    text-transform: uppercase;
+    padding-top: 10px
+}
+.contact-info ul{
+ padding: 10px;
+}
+.contact-info ul li{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.contact-info ul li i{
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(145, 145, 254);
+}
+.text{
+    font-size: 20px;
+    font-weight: 10;
+    
+}
+/* .skills{
+padding: 10px;
+} */
+.progress .fa-star.active {
+    color: #b6e3f0;
+    margin-right: 5px;
+    }
+    
+    
+    .progress {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #313131;
+    border-radius: 50%;
+    margin-left: 4px;
+    }
+    
+    li::marker
+    {
+    /* margin-left: 20px; */
+    font-size: 2rem;
+    color: #9db858;
+    }
+/* end of left part */
+/* right part */
+.detailed{
+    background-color: rgb(253, 252, 252);
+    height: 100%;
+}
+.detail{
+    padding: 15px;
+}
+
+.summary{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: wheat;
+}
+.desc{
+    margin-top: 15px;
+    line-height: 1.5;
+}
+.group-2, .group-3{
+    padding: 15px;
+}
+ .group-2 .desc {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+   .group-2 .desc ul {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 5px;
+  }
+   .group-2 .desc ul:before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -22px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #9db858;
+  }
+ .group-2 .desc ul li {
+    list-style-type: none;
+    position: relative;
+  }
+   .group-2 .desc ul li:before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -18px;
+    height: 60px;
+    border-left: 2px solid #9db858;
+  }
+ .group-2 .desc ul:last-of-type li:before {
+    content: none;
+  }
+   .group-2 .desc ul li div:last-of-type {
+    color: #9db858;
+    font-weight: bold;
+  }
+  .date{
+    padding: 10px;
+    
+  }
+  .dte, .pos, .company, .location, .address{
+    color: rgb(27, 26, 26);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px;
+    
+  }
+  .txt{
+    padding: 5px;
+    color: rgb(22, 21, 21);
+    text-align: justify;
+    
+  }

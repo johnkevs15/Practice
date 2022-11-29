@@ -8,81 +8,93 @@ function imagePreview(image){
    reader.readAsDataURL(images)
    
 }
-// for adding education
+
 $(document).ready(function(){
     // show Educational background
    $(".btnnext").click(function(){
-    
-    // var lastnameVal = $("#lname").val();
-    // var fnameVal = $("#fname").val();
-    // var jobVal = $("#job").val();
-    // var addressVal = $("#address").val();
-    // var contactVal = $("#contact").val(); 
-    // var emailVal = $("#email").val();
-    // if(lastnameVal.length!=0 && fnameVal.length!=0 && jobVal.length!=0 && addressVal.length!=0 && contactVal.length!=0 && emailVal!=0)  
-    // {
+    var fnameVal = $("#fname").val();
+    var contactVal = $("#contact").val(); 
+    var emailVal = $("#email").val();
+    if(fnameVal.length!=0 && contactVal.length!=0 && emailVal!=0)  
+    {
        $(".first").hide(); 
      $(".second").show();
-    // }
+
+    }
    });
    // show Professional Skills
  
    $(".nextbtn1").click(function(){
-       $(".second").hide(); 
+    var startVal = $("#start").val();
+    var endVal = $("#end").val();
+    if(startVal!=0 && endVal!=0){   
+    $(".second").hide(); 
        $(".first").hide(); 
      $(".third").show();
-   
+    }
 
   
    });
    $(".backbtn1").click(function(){
-    // var schoolVal = $("#school").val();
-    // var schoollocationVal = $("#schooll").val();
-    // var degreeVal = $("#deg").val();
-    // var fieldVal = $("#field").val();
-    // var startVal = $("#start").val();
-    // var endVal = $("#end").val();
-    // if(schoolVal.length!=0 && schoollocationVal!=0 && degreeVal!=0 && fieldVal!=0 && startVal!=0 && endVal!=0){ 
+    
+   
      $(".second").hide();
      $(".first").show();
-    // }
+    
    });
     // show Work History
    $(".nextbtn2").click(function(){
-       $(".second").hide(); 
+       var skillsVal = $("#skills").val();
+    
+    if( skillsVal!=0){  
+    $(".second").hide(); 
        $(".first").hide(); 
        $(".third").hide(); 
      $(".fourth").show();
+       }
    });
    $(".backbtn2").click(function(){
-    // var schoolVal = $("#school").val();
-    // var schoollocationVal = $("#schooll").val();
-    // var degreeVal = $("#deg").val();
-    // var fieldVal = $("#field").val();
-    // var startVal = $("#start").val();
-    // var endVal = $("#end").val();
-    // if(schoolVal.length!=0 && schoollocationVal!=0 && degreeVal!=0 && fieldVal!=0 && startVal!=0 && endVal!=0){ 
+ 
+   
      $(".third").hide();
      $(".second").show();
-    // }
+  
    });
+//    for summary
    $(".nextbtn3").click(function(){
-//     $(".second").hide(); 
-//     $(".first").hide(); 
-//     $(".third").hide(); 
-//   $(".fourth").show();
+    var stVal = $("#st").val();
+    var edVal = $("#ed").val();
+    if(stVal!=0 && edVal!=0){
+    $(".second").hide(); 
+    $(".first").hide(); 
+    $(".third").hide(); 
+    $(".fourth").hide(); 
+  $(".fifth").show();
+ }
 });
 $(".backbtn3").click(function(){
- // var schoolVal = $("#school").val();
- // var schoollocationVal = $("#schooll").val();
- // var degreeVal = $("#deg").val();
- // var fieldVal = $("#field").val();
- // var startVal = $("#start").val();
- // var endVal = $("#end").val();
- // if(schoolVal.length!=0 && schoollocationVal!=0 && degreeVal!=0 && fieldVal!=0 && startVal!=0 && endVal!=0){ 
+
   $(".fourth").hide();
   $(".third").show();
- // }
+ 
+});
+// for final Review
+// $(".nextbtn4").click(function(){
+    // var startVal = $("#start").val();
+ // var endVal = $("#end").val();
+ // if(schoolVal.length!=0 && schoollocationVal!=0 && degreeVal!=0 && fieldVal!=0 && startVal!=0 && endVal!=0){ 
+// //     $(".second").hide(); 
+// //     $(".first").hide(); 
+// //     $(".third").hide(); 
+// //     $(".fourth").hide(); 
+// //   $(".fifth").hide();
+// });
+$(".backbtn4").click(function(){
+ 
+ 
+  $(".fifth").hide();
+  $(".fourth").show();
+
 });
 });
 
@@ -98,11 +110,11 @@ function addEducation(){
       var field = 
       `  <div class="field" style="grid-gap:11% ;margin-top:30px;">
       <div class="input-field">
-          <input type="text" placeholder="School name" style="width: 560px; height: 50px;" required id="school">
+          <input type="text" placeholder="School name" name="schoolName${education_count}" style="width: 560px; height: 50px;" required id="school">
           <label >School name</label>
       </div>
       <div class="input-field">
-          <input type="text" placeholder="school location" style="width:560px; height: 50px;" id="schooll" required>
+          <input type="text" placeholder="school location" name="schoolLocation${education_count}" style="width:560px; height: 50px;" id="schooll" required>
           <label >school location</label>
       </div>  
   
@@ -110,21 +122,21 @@ function addEducation(){
   </div>
   <div class="field-1">
                     <div class="input-field-1">
-                        <input type="text" placeholder="degree" style="width: 1259px; height: 50px;" id="deg" required>
+                        <input type="text" placeholder="degree" name="degree${education_count}" style="width: 1259px; height: 50px;" id="deg" required>
                         <label >degree</label>
                     </div>
                     <div class="input-field-1">
-                        <input type="text" placeholder="field of study" style="width: 1259px; height: 50px;" id="field" required>
+                        <input type="text" placeholder="field of study" name="field${education_count}" style="width: 1259px; height: 50px;" id="field" required>
                         <label >field of study</label>
                     </div>      
                 </div>
                 <div class="field"style="grid-gap:11%">
                     <div class="input-field">
-                        <input type="date" placeholder="school start" style="width: 560px; height: 50px;" id="start" required>
+                        <input type="date" placeholder="school start" name="schoolStart${education_count}" style="width: 560px; height: 50px;" id="start" required>
                         <label >school start</label>
                     </div>
                     <div class="input-field">
-                        <input type="date" placeholder="school end" style="width: 560px; height: 50px;" id="end" required>
+                        <input type="date" placeholder="school end" name="schoolEnd${education_count}" style="width: 560px; height: 50px;" id="end" required>
                         <label >school end</label>
                     </div>  
                 
@@ -150,8 +162,8 @@ function addSkill(){
       var field = 
       `<div class="mb-3" style="display: grid; padding:10px; with:100%;">
       <label for="exampleInputEmail1" class="form-label">Your Skills</label>
-      <input type="text" class="form-control" name="skill1" style="height: 30px; margin-bottom: 5px;" required>
-      <select class="form-select mt-2" name="skill_level1" style="height: 30px;" required>
+      <input type="text" class="form-control" name="skill1${skill_count}" style="height: 30px; margin-bottom: 5px;" required>
+      <select class="form-select mt-2" name="skill_level1${skill_count}" style="height: 30px;" required>
           <option value="">Select stars based upon your skill level</option>
           <option value="1">1 - Novice</option>
           <option value="2">2 - Advanced Beginner</option>
@@ -170,20 +182,7 @@ function addSkill(){
       skillHide.style = "display:none";
   }
 }
- // for to do list
-//  $(document).ready(function(){
-//  $('#skilladd').click(function(){
-//     var input = $('.input').val()
-//    var text= $("#select :selected").text();
-//   var value = $("#select").val();
-//     $('ul').append('<li">'+input +'\n'+ text+'</li>').css("text-decoration","none")
-//     $(this).val('');
- 
-//  })
- 
-  
 
-// });
 
 function formatDoc(cmd, value=null) {
 	if(value) {
